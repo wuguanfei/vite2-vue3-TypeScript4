@@ -1,7 +1,7 @@
 <template>
   <el-container style="height:100vh;">
     <el-header class="header">
-      <div class="top-title">vite2+vue3+TypeScript4</div>
+      <div class="top-title">vite2-vue3-TypeScript4</div>
       <div class="header-dropdown">
         <el-dropdown size="small">
           <span class="el-dropdown-link">{{userInfo.username}}<i class="el-icon-arrow-down el-icon--right"></i>

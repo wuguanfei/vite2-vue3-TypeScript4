@@ -1,5 +1,5 @@
 {
-	"name": "vite2+vue3+TypeScript4",
+	"name": "vite2-vue3-TypeScript4",
 	"version": "0.0.0",
 	"scripts": {
 		"dev": "vite",
