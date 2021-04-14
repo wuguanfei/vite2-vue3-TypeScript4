@@ -17,44 +17,52 @@
 </template>
 
 <script>
-import { ref, reactive, onMounted } from 'vue';
-import { useRouter } from 'vue-router';
-import { ElMessage } from 'element-plus';
+import { ref, reactive, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+import { ElMessage } from 'element-plus'
+import { loginSvr } from '@/api/loginSvr'
 
 export default {
   setup() {
-    const formInline = ref(null);
+    const LoginSvr = new loginSvr()
+    const formInline = ref(null)
     const loginForm = reactive({
       account: 'admin',
-      password: 'admin',
-    });
+      password: 'admin'
+    })
     const ruleForm = reactive({
       account: [{ required: true, message: '请输入账号', trigger: 'blur' }],
-      password: [{ required: true, message: '请输入密码', trigger: 'blur' }],
-    });
-    const router = useRouter();
+      password: [{ required: true, message: '请输入密码', trigger: 'blur' }]
+    })
+    const router = useRouter()
     const login = () => {
       formInline.value.validate().then(() => {
+        /* 
+				// 该注释为登录请求
+				LoginSvr.login(loginForm.account, loginForm.password).then((res) => {
+          console.log(res)
+        }) 
+				*/
         if (loginForm.account === 'admin' && loginForm.password === 'admin') {
           let userInfo = {
             metaData: { username: 'admin' },
-            token: 'this is token',
-          };
-          localStorage.setItem('userInfo', JSON.stringify(userInfo));
-          router.replace('/index');
+            token: 'this is token'
+          }
+          localStorage.setItem('userInfo', JSON.stringify(userInfo))
+          router.replace('/index')
         } else {
-          ElMessage.error('账号或密码输入不正确！');
+          ElMessage.error('账号或密码输入不正确！')
         }
-      });
-    };
+      })
+    }
     return {
       loginForm,
       login,
       formInline,
-      ruleForm,
-    };
-  },
-};
+      ruleForm
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>
