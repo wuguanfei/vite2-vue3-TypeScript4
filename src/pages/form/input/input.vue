@@ -36,11 +36,13 @@ export default {
     const input2 = ref('');
     const input3 = ref('');
     const input4 = ref('');
+		const select = ref('select');
     return {
       input1,
       input2,
       input3,
       input4,
+			select
     };
   },
 };

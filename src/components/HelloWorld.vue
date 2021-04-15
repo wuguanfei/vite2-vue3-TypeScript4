@@ -7,9 +7,9 @@
 <script lang="ts">
 import { ref, onMounted } from 'vue'
 export default {
-  setup(props, { emit }) {
+  setup(props: any, context: any) {
     const toEmit = () => {
-      emit('to-emit', '子向父传参！')
+      context.emit('to-emit', '子向父传参！')
     }
     return {
       toEmit

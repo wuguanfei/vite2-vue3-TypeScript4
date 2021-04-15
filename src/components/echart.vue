@@ -7,6 +7,11 @@
 import { ref, reactive, onMounted, nextTick } from 'vue';
 import * as  echarts from 'echarts';
 
+interface Style {
+  width: string,
+  height: string,
+}
+
 export default {
   props: {
     width: {
@@ -20,7 +25,7 @@ export default {
       default: '250px',
     }
   },
-  setup(props) {
+  setup(props: Style) {
     const chart = ref(null);
     const width = ref('');
     const height = ref('');
