@@ -1,0 +1,1 @@
+import{f as e,g as r,h as s,m as t}from"./index.6506dafc.js";const a={setup:()=>({})},o=t()(((t,a,o,d,c,f)=>{const n=e("router-view");return r(),s(n)}));a.render=o,a.__scopeId="data-v-01c4781f";export default a;

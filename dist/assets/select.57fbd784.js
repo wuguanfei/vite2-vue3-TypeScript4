@@ -1,0 +1,1 @@
+import{a as e,g as s,h as a,m as t}from"./index.6506dafc.js";const c={setup:()=>({str:e("vue3")})},d=t()(((e,t,c,d,o,r)=>(s(),a("section",null,"select"))));c.render=d,c.__scopeId="data-v-3c14cb0a";export default c;

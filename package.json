@@ -22,5 +22,6 @@
 		"typescript": "^4.1.3",
 		"vite": "^2.1.5",
 		"vue-tsc": "^0.0.15"
-	}
+	},
+	"homepage": "https://github.com/wuguanfei/vite2-vue3-TypeScript4"
 }
