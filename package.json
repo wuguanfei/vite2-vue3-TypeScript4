@@ -9,10 +9,10 @@
 	"dependencies": {
 		"axios": "^0.21.1",
 		"echarts": "^5.0.2",
-		"element-plus": "^1.0.2-beta.36",
-		"vue": "^3.0.5",
-		"vue-router": "^4.0.5",
-		"vuex": "^4.0.0"
+		"element-plus": "^1.0.2-beta.48",
+		"vue": "^3.1.1",
+		"vue-router": "^4.0.8",
+		"vuex": "^4.0.1"
 	},
 	"devDependencies": {
 		"@types/node": "^14.14.37",

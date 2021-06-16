@@ -6,7 +6,7 @@
           <el-input v-model="loginForm.account" size="large" placeholder="admin" @keyup.enter="login"></el-input>
         </el-form-item>
         <el-form-item label="密码：" prop="password">
-          <el-input v-model="loginForm.password" size="large" placeholder="admin" type="password" @keyup.enter="login"></el-input>
+          <el-input v-model="loginForm.password" size="large" placeholder="admin" type="password" @keyup.enter="login" show-password></el-input>
         </el-form-item>
         <el-form-item>
           <el-button size="large" type="primary" class="btn" @click="login">登录</el-button>
@@ -19,11 +19,13 @@
 <script>
 import { ref, reactive, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
+import { useStore } from 'vuex'
 import { ElMessage } from 'element-plus'
 import { loginSvr } from '@/api/loginSvr'
 
 export default {
   setup() {
+    const store = useStore()
     const LoginSvr = new loginSvr()
     const formInline = ref(null)
     const loginForm = reactive({
@@ -49,6 +51,7 @@ export default {
             token: 'this is token'
           }
           localStorage.setItem('userInfo', JSON.stringify(userInfo))
+          store.commit('SET_USERINFO', userInfo)
           router.replace('/index')
         } else {
           ElMessage.error('账号或密码输入不正确！')
